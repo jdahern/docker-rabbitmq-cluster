@@ -6,6 +6,7 @@ rabbit1:
   ports:
     - "5672:5672"
     - "15672:15672"
+    - "61613:61613"
 rabbit2:
   image: harbur/rabbitmq-cluster
   hostname: rabbit2
@@ -18,6 +19,8 @@ rabbit2:
   ports:
     - "5673:5672"
     - "15673:15672"
+    - "61613:61613"
+
 rabbit3:
   image: harbur/rabbitmq-cluster
   hostname: rabbit3
@@ -29,3 +32,6 @@ rabbit3:
     - CLUSTER_WITH=rabbit1
   ports:
     - "5674:5672"
+    - "15673:15672"
+    - "61613:61613"
+
